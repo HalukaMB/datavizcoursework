@@ -1,0 +1,259 @@
+<tr class="cev">
+<td class="cpt">U+0080</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x80</td></tr>
+<tr class="cod">
+<td class="cpt">U+0081</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x81</td></tr>
+<tr class="cev">
+<td class="cpt">U+0082</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x82</td></tr>
+<tr class="cod">
+<td class="cpt">U+0083</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x83</td></tr>
+<tr class="cev">
+<td class="cpt">U+0084</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x84</td></tr>
+<tr class="cod">
+<td class="cpt">U+0085</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x85</td></tr>
+<tr class="cev">
+<td class="cpt">U+0086</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x86</td></tr>
+<tr class="cod">
+<td class="cpt">U+0087</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x87</td></tr>
+<tr class="cev">
+<td class="cpt">U+0088</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x88</td></tr>
+<tr class="cod">
+<td class="cpt">U+0089</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x89</td></tr>
+<tr class="cev">
+<td class="cpt">U+008A</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8a</td></tr>
+<tr class="cod">
+<td class="cpt">U+008B</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8b</td></tr>
+<tr class="cev">
+<td class="cpt">U+008C</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8c</td></tr>
+<tr class="cod">
+<td class="cpt">U+008D</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8d</td></tr>
+<tr class="cev">
+<td class="cpt">U+008E</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8e</td></tr>
+<tr class="cod">
+<td class="cpt">U+008F</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x8f</td></tr>
+<tr class="cev">
+<td class="cpt">U+0090</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x90</td></tr>
+<tr class="cod">
+<td class="cpt">U+0091</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x91</td></tr>
+<tr class="cev">
+<td class="cpt">U+0092</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x92</td></tr>
+<tr class="cod">
+<td class="cpt">U+0093</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x93</td></tr>
+<tr class="cev">
+<td class="cpt">U+0094</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x94</td></tr>
+<tr class="cod">
+<td class="cpt">U+0095</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x95</td></tr>
+<tr class="cev">
+<td class="cpt">U+0096</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x96</td></tr>
+<tr class="cod">
+<td class="cpt">U+0097</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x97</td></tr>
+<tr class="cev">
+<td class="cpt">U+0098</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x98</td></tr>
+<tr class="cod">
+<td class="cpt">U+0099</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x99</td></tr>
+<tr class="cev">
+<td class="cpt">U+009A</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9a</td></tr>
+<tr class="cod">
+<td class="cpt">U+009B</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9b</td></tr>
+<tr class="cev">
+<td class="cpt">U+009C</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9c</td></tr>
+<tr class="cod">
+<td class="cpt">U+009D</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9d</td></tr>
+<tr class="cev">
+<td class="cpt">U+009E</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9e</td></tr>
+<tr class="cod">
+<td class="cpt">U+009F</td><td class="charnodisplay">&nbsp;</td><td class="utf8">\xc2\x9f</td></tr>
+<tr class="cev">
+<td class="cpt">U+00A0</td><td class="char">&nbsp;</td><td class="utf8">\xc2\xa0</td></tr>
+<tr class="cod">
+<td class="cpt">U+00A1</td><td class="char">¡</td><td class="utf8">\xc2\xa1</td></tr>
+<tr class="cev">
+<td class="cpt">U+00A2</td><td class="char">¢</td><td class="utf8">\xc2\xa2</td></tr>
+<tr class="cod">
+<td class="cpt">U+00A3</td><td class="char">£</td><td class="utf8">\xc2\xa3</td></tr>
+<tr class="cev">
+<td class="cpt">U+00A4</td><td class="char">¤</td><td class="utf8">\xc2\xa4</td></tr>
+<tr class="cod">
+<td class="cpt">U+00A5</td><td class="char">¥</td><td class="utf8">\xc2\xa5</td></tr>
+<tr class="cev">
+<td class="cpt">U+00A6</td><td class="char">¦</td><td class="utf8">\xc2\xa6</td></tr>
+<tr class="cod">
+<td class="cpt">U+00A7</td><td class="char">§</td><td class="utf8">\xc2\xa7</td></tr>
+<tr class="cev">
+<td class="cpt">U+00A8</td><td class="char">¨</td><td class="utf8">\xc2\xa8</td></tr>
+<tr class="cod">
+<td class="cpt">U+00A9</td><td class="char">©</td><td class="utf8">\xc2\xa9</td></tr>
+<tr class="cev">
+<td class="cpt">U+00AA</td><td class="char">ª</td><td class="utf8">\xc2\xaa</td></tr>
+<tr class="cod">
+<td class="cpt">U+00AB</td><td class="char">«</td><td class="utf8">\xc2\xab</td></tr>
+<tr class="cev">
+<td class="cpt">U+00AC</td><td class="char">¬</td><td class="utf8">\xc2\xac</td></tr>
+<tr class="cod">
+<td class="cpt">U+00AD</td><td class="char">­</td><td class="utf8">\xc2\xad</td></tr>
+<tr class="cev">
+<td class="cpt">U+00AE</td><td class="char">®</td><td class="utf8">\xc2\xae</td></tr>
+<tr class="cod">
+<td class="cpt">U+00AF</td><td class="char">¯</td><td class="utf8">\xc2\xaf</td></tr>
+<tr class="cev">
+<td class="cpt">U+00B0</td><td class="char">°</td><td class="utf8">\xc2\xb0</td></tr>
+<tr class="cod">
+<td class="cpt">U+00B1</td><td class="char">±</td><td class="utf8">\xc2\xb1</td></tr>
+<tr class="cev">
+<td class="cpt">U+00B2</td><td class="char">²</td><td class="utf8">\xc2\xb2</td></tr>
+<tr class="cod">
+<td class="cpt">U+00B3</td><td class="char">³</td><td class="utf8">\xc2\xb3</td></tr>
+<tr class="cev">
+<td class="cpt">U+00B4</td><td class="char">´</td><td class="utf8">\xc2\xb4</td></tr>
+<tr class="cod">
+<td class="cpt">U+00B5</td><td class="char">µ</td><td class="utf8">\xc2\xb5</td></tr>
+<tr class="cev">
+<td class="cpt">U+00B6</td><td class="char">¶</td><td class="utf8">\xc2\xb6</td></tr>
+<tr class="cod">
+<td class="cpt">U+00B7</td><td class="char">·</td><td class="utf8">\xc2\xb7</td></tr>
+<tr class="cev">
+<td class="cpt">U+00B8</td><td class="char">¸</td><td class="utf8">\xc2\xb8</td></tr>
+<tr class="cod">
+<td class="cpt">U+00B9</td><td class="char">¹</td><td class="utf8">\xc2\xb9</td></tr>
+<tr class="cev">
+<td class="cpt">U+00BA</td><td class="char">º</td><td class="utf8">\xc2\xba</td></tr>
+<tr class="cod">
+<td class="cpt">U+00BB</td><td class="char">»</td><td class="utf8">\xc2\xbb</td></tr>
+<tr class="cev">
+<td class="cpt">U+00BC</td><td class="char">¼</td><td class="utf8">\xc2\xbc</td></tr>
+<tr class="cod">
+<td class="cpt">U+00BD</td><td class="char">½</td><td class="utf8">\xc2\xbd</td></tr>
+<tr class="cev">
+<td class="cpt">U+00BE</td><td class="char">¾</td><td class="utf8">\xc2\xbe</td></tr>
+<tr class="cod">
+<td class="cpt">U+00BF</td><td class="char">¿</td><td class="utf8">\xc2\xbf</td></tr>
+<tr class="cev">
+<td class="cpt">U+00C0</td><td class="char">À</td><td class="utf8">\xc3\x80</td></tr>
+<tr class="cod">
+<td class="cpt">U+00C1</td><td class="char">Á</td><td class="utf8">\xc3\x81</td></tr>
+<tr class="cev">
+<td class="cpt">U+00C2</td><td class="char">Â</td><td class="utf8">\xc3\x82</td></tr>
+<tr class="cod">
+<td class="cpt">U+00C3</td><td class="char">Ã</td><td class="utf8">\xc3\x83</td></tr>
+<tr class="cev">
+<td class="cpt">U+00C4</td><td class="char">Ä</td><td class="utf8">\xc3\x84</td></tr>
+<tr class="cod">
+<td class="cpt">U+00C5</td><td class="char">Å</td><td class="utf8">\xc3\x85</td></tr>
+<tr class="cev">
+<td class="cpt">U+00C6</td><td class="char">Æ</td><td class="utf8">\xc3\x86</td></tr>
+<tr class="cod">
+<td class="cpt">U+00C7</td><td class="char">Ç</td><td class="utf8">\xc3\x87</td></tr>
+<tr class="cev">
+<td class="cpt">U+00C8</td><td class="char">È</td><td class="utf8">\xc3\x88</td></tr>
+<tr class="cod">
+<td class="cpt">U+00C9</td><td class="char">É</td><td class="utf8">\xc3\x89</td></tr>
+<tr class="cev">
+<td class="cpt">U+00CA</td><td class="char">Ê</td><td class="utf8">\xc3\x8a</td></tr>
+<tr class="cod">
+<td class="cpt">U+00CB</td><td class="char">Ë</td><td class="utf8">\xc3\x8b</td></tr>
+<tr class="cev">
+<td class="cpt">U+00CC</td><td class="char">Ì</td><td class="utf8">\xc3\x8c</td></tr>
+<tr class="cod">
+<td class="cpt">U+00CD</td><td class="char">Í</td><td class="utf8">\xc3\x8d</td></tr>
+<tr class="cev">
+<td class="cpt">U+00CE</td><td class="char">Î</td><td class="utf8">\xc3\x8e</td></tr>
+<tr class="cod">
+<td class="cpt">U+00CF</td><td class="char">Ï</td><td class="utf8">\xc3\x8f</td></tr>
+<tr class="cev">
+<td class="cpt">U+00D0</td><td class="char">Ð</td><td class="utf8">\xc3\x90</td></tr>
+<tr class="cod">
+<td class="cpt">U+00D1</td><td class="char">Ñ</td><td class="utf8">\xc3\x91</td></tr>
+<tr class="cev">
+<td class="cpt">U+00D2</td><td class="char">Ò</td><td class="utf8">\xc3\x92</td></tr>
+<tr class="cod">
+<td class="cpt">U+00D3</td><td class="char">Ó</td><td class="utf8">\xc3\x93</td></tr>
+<tr class="cev">
+<td class="cpt">U+00D4</td><td class="char">Ô</td><td class="utf8">\xc3\x94</td></tr>
+<tr class="cod">
+<td class="cpt">U+00D5</td><td class="char">Õ</td><td class="utf8">\xc3\x95</td></tr>
+<tr class="cev">
+<td class="cpt">U+00D6</td><td class="char">Ö</td><td class="utf8">\xc3\x96</td></tr>
+<tr class="cod">
+<td class="cpt">U+00D7</td><td class="char">×</td><td class="utf8">\xc3\x97</td></tr>
+<tr class="cev">
+<td class="cpt">U+00D8</td><td class="char">Ø</td><td class="utf8">\xc3\x98</td></tr>
+<tr class="cod">
+<td class="cpt">U+00D9</td><td class="char">Ù</td><td class="utf8">\xc3\x99</td></tr>
+<tr class="cev">
+<td class="cpt">U+00DA</td><td class="char">Ú</td><td class="utf8">\xc3\x9a</td></tr>
+<tr class="cod">
+<td class="cpt">U+00DB</td><td class="char">Û</td><td class="utf8">\xc3\x9b</td></tr>
+<tr class="cev">
+<td class="cpt">U+00DC</td><td class="char">Ü</td><td class="utf8">\xc3\x9c</td></tr>
+<tr class="cod">
+<td class="cpt">U+00DD</td><td class="char">Ý</td><td class="utf8">\xc3\x9d</td></tr>
+<tr class="cev">
+<td class="cpt">U+00DE</td><td class="char">Þ</td><td class="utf8">\xc3\x9e</td></tr>
+<tr class="cod">
+<td class="cpt">U+00DF</td><td class="char">ß</td><td class="utf8">\xc3\x9f</td></tr>
+<tr class="cev">
+<td class="cpt">U+00E0</td><td class="char">à</td><td class="utf8">\xc3\xa0</td></tr>
+<tr class="cod">
+<td class="cpt">U+00E1</td><td class="char">á</td><td class="utf8">\xc3\xa1</td></tr>
+<tr class="cev">
+<td class="cpt">U+00E2</td><td class="char">â</td><td class="utf8">\xc3\xa2</td></tr>
+<tr class="cod">
+<td class="cpt">U+00E3</td><td class="char">ã</td><td class="utf8">\xc3\xa3</td></tr>
+<tr class="cev">
+<td class="cpt">U+00E4</td><td class="char">ä</td><td class="utf8">\xc3\xa4</td></tr>
+<tr class="cod">
+<td class="cpt">U+00E5</td><td class="char">å</td><td class="utf8">\xc3\xa5</td></tr>
+<tr class="cev">
+<td class="cpt">U+00E6</td><td class="char">æ</td><td class="utf8">\xc3\xa6</td></tr>
+<tr class="cod">
+<td class="cpt">U+00E7</td><td class="char">ç</td><td class="utf8">\xc3\xa7</td></tr>
+<tr class="cev">
+<td class="cpt">U+00E8</td><td class="char">è</td><td class="utf8">\xc3\xa8</td></tr>
+<tr class="cod">
+<td class="cpt">U+00E9</td><td class="char">é</td><td class="utf8">\xc3\xa9</td></tr>
+<tr class="cev">
+<td class="cpt">U+00EA</td><td class="char">ê</td><td class="utf8">\xc3\xaa</td></tr>
+<tr class="cod">
+<td class="cpt">U+00EB</td><td class="char">ë</td><td class="utf8">\xc3\xab</td></tr>
+<tr class="cev">
+<td class="cpt">U+00EC</td><td class="char">ì</td><td class="utf8">\xc3\xac</td></tr>
+<tr class="cod">
+<td class="cpt">U+00ED</td><td class="char">í</td><td class="utf8">\xc3\xad</td></tr>
+<tr class="cev">
+<td class="cpt">U+00EE</td><td class="char">î</td><td class="utf8">\xc3\xae</td></tr>
+<tr class="cod">
+<td class="cpt">U+00EF</td><td class="char">ï</td><td class="utf8">\xc3\xaf</td></tr>
+<tr class="cev">
+<td class="cpt">U+00F0</td><td class="char">ð</td><td class="utf8">\xc3\xb0</td></tr>
+<tr class="cod">
+<td class="cpt">U+00F1</td><td class="char">ñ</td><td class="utf8">\xc3\xb1</td></tr>
+<tr class="cev">
+<td class="cpt">U+00F2</td><td class="char">ò</td><td class="utf8">\xc3\xb2</td></tr>
+<tr class="cod">
+<td class="cpt">U+00F3</td><td class="char">ó</td><td class="utf8">\xc3\xb3</td></tr>
+<tr class="cev">
+<td class="cpt">U+00F4</td><td class="char">ô</td><td class="utf8">\xc3\xb4</td></tr>
+<tr class="cod">
+<td class="cpt">U+00F5</td><td class="char">õ</td><td class="utf8">\xc3\xb5</td></tr>
+<tr class="cev">
+<td class="cpt">U+00F6</td><td class="char">ö</td><td class="utf8">\xc3\xb6</td></tr>
+<tr class="cod">
+<td class="cpt">U+00F7</td><td class="char">÷</td><td class="utf8">\xc3\xb7</td></tr>
+<tr class="cev">
+<td class="cpt">U+00F8</td><td class="char">ø</td><td class="utf8">\xc3\xb8</td></tr>
+<tr class="cod">
+<td class="cpt">U+00F9</td><td class="char">ù</td><td class="utf8">\xc3\xb9</td></tr>
+<tr class="cev">
+<td class="cpt">U+00FA</td><td class="char">ú</td><td class="utf8">\xc3\xba</td></tr>
+<tr class="cod">
+<td class="cpt">U+00FB</td><td class="char">û</td><td class="utf8">\xc3\xbb</td></tr>
+<tr class="cev">
+<td class="cpt">U+00FC</td><td class="char">ü</td><td class="utf8">\xc3\xbc</td></tr>
+<tr class="cod">
+<td class="cpt">U+00FD</td><td class="char">ý</td><td class="utf8">\xc3\xbd</td></tr>
+<tr class="cev">
+<td class="cpt">U+00FE</td><td class="char">þ</td><td class="utf8">\xc3\xbe</td></tr>
+<tr class="cod">
+<td class="cpt">U+00FF</td><td class="char">ÿ</td><td class="utf8">\xc3\xbf</td></tr>
+</tbody></table>
+
+</body></html>
