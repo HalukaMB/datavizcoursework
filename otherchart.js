@@ -13,6 +13,13 @@ var width = 960,
     height = 450,
 	radius = Math.min(width, height) / 2;
 
+var margin = {
+		top: 20,
+		bottom: 20,
+		left: 40,
+		right: 120,
+};
+
 var pie = d3.layout.pie()
 	.sort(null)
   .startAngle(-0.5 * Math.PI)
@@ -87,7 +94,11 @@ function change(data) {
 		.attr("dy", ".35em")
 		.text(function(d) {
 			return d.data.label;
-		});
+		})
+		//wraps long texts
+		.call(wrap, margin.right - 20);
+
+
 
 	function midAngle(d){
 		return d.startAngle + (d.endAngle - d.startAngle)/2;
