@@ -1,0 +1,11 @@
+body {
+    font-family: "tee_franklin_light", 'Source Sans Pro', "Helvetica Neue", Helvetica, "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+}
+
+polyline {
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
