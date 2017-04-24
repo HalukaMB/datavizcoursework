@@ -102,9 +102,19 @@ function change(data) {
 			return d.data.label;
 		})
 		//wraps long texts
-		.call(wrap, margin.right - 20);
+		.call(wrap, margin.right - 20)
 
-
+		//Positions text according to path
+		.attr("transform", function(d) {
+				var pos = outerArc.centroid(d);
+				//If midAngle is smaller than Math.Pi the pos[0] is radius*1, otherwise it is radius*-1
+				pos[0] = radius * (midAngle(d) < 0 ? -1 : 1);
+				return "translate(" + pos + ")";
+		})
+		//similar here. If the midAngle is smaller than Math.Pi the text Anchor is set to "start" else it is  "end"
+		.style("text-anchor", function(d) {
+				return midAngle(d) < 0 ? "end" : "start";
+		})
 
 	function midAngle(d){
 		return d.startAngle + (d.endAngle - d.startAngle)/2;
