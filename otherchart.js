@@ -10,7 +10,7 @@ svg.append("g")
 	.attr("class", "lines");
 
 var width = 960,
-    height = 450,
+    height = 600,
 	radius = Math.min(width, height) / 2;
 
 var margin = {
@@ -22,8 +22,8 @@ var margin = {
 
 var pie = d3.layout.pie()
 	.sort(null)
-  .startAngle(-0.5 * Math.PI)
-  .endAngle(0.5 * Math.PI)
+  .startAngle(0.5 * Math.PI)
+  .endAngle(-0.5 * Math.PI)
 	.value(function(d) {
 		return d.value;
 	});
@@ -58,6 +58,15 @@ d3.select(".randomize")
 		change(randomData());
 	});
 
+	d3.select(".align")
+		.on("click", function(){
+			arrangeLabels(svg, ".label");
+		});
+
+		d3.select(".alignB")
+			.on("click", function(){
+				arrangeLabelsB(svg, ".label");
+			});
 
 function change(data) {
 
@@ -145,26 +154,35 @@ function change(data) {
 	text.exit()
 		.remove();
 
+		//Calls the arrangeLabels function on all elements of the class label to arrange them
+	
+
 	/* ------- SLICE TO TEXT POLYLINES -------*/
 
-	var polyline = svg.select(".lines").selectAll("polyline")
+	var polyline = svg.select(".lines")
+		.selectAll("polyline")
 		.data(pie(data), key);
 
 	polyline.enter()
 		.append("polyline");
 
 	polyline.transition().duration(1000)
-		.attrTween("points", function(d){
-			this._current = this._current || d;
-			var interpolate = d3.interpolate(this._current, d);
-			this._current = interpolate(0);
-			return function(t) {
-				var d2 = interpolate(t);
-				var pos = outerArc.centroid(d2);
-				pos[0] = radius * 0.95 * (midAngle(d2) < 0 ? -1 : 1);
-				return [arc.centroid(d2), outerArc.centroid(d2), pos];
-			};
-		});
+	.attr("points", function(d, j) {
+	//if midAngle bigger as Pi Offset is set to 10
+		var offset = midAngle(d) < 0 ? +10 : 0;
+		//picks up the indexed text from earlier
+		var label = d3.select('#l-' + j);
+		//Complicated function from the other script that should help to order the text
+		var transform = getTransformation(label.attr("transform"));
+		//Position of the polyline should be the centroid
+		var pos = outerArc.centroid(d);
+		//This is also from the other function
+		pos[0] = transform.translateX + offset;
+		pos[1] = transform.translateY;
+		var mid = outerArc.centroid(d);
+		mid[1] = transform.translateY;
+		return [arc.centroid(d), mid, pos];
+});
 
 	polyline.exit()
 		.remove();

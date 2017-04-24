@@ -1,9 +1,9 @@
 var module_data = {
     "question": "Was good at explaining things",
     "N/A": 0.02763018065887354,
-    "Disagree": 0.10839532412327312,
-    "Neither Agree nor Disagree": 0.13177470775770456,
-    "Agree": 0.7321997874601488
+    "Disagree": 0.7321997874601488,
+    "Neither Agree nor Disagree": 0.08177470775770456,
+    "Agree": 0.0701
 };
 
 var columns = ["N/A", "Disagree", "Neither Agree nor Disagree", "Agree"];

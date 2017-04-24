@@ -45,7 +45,43 @@ function arrangeLabels(selection, label_class) {
                 selection.selectAll(label_class)
                     .each(function() {
                         if (this != that) {
-                            var b = this.getBoundingClientRect();
+                            var b = this.getBoundingClientRect()
+                            console.log(b);
+                            if ((Math.abs(a.left - b.left) * 2 < (a.width + b.width)) && (Math.abs(a.top - b.top) * 2 < (a.height + b.height))) {
+                                var dx = (Math.max(0, a.right - b.left) + Math.min(0, a.left - b.right)) * 0.01;
+                                var dy = (Math.max(0, a.bottom - b.top) + Math.min(0, a.top - b.bottom)) * 0.02;
+                                var tt = getTransformation(d3.select(this)
+                                    .attr("transform"));
+                                var to = getTransformation(d3.select(that)
+                                    .attr("transform"));
+                                move += Math.abs(dx) + Math.abs(dy);
+
+                                to.translate = [to.translateX + dx, to.translateY + dy];
+                                tt.translate = [tt.translateX - dx, tt.translateY - dy];
+                                d3.select(this)
+                                    .attr("transform", "translate(" + tt.translate + ")");
+                                d3.select(that)
+                                    .attr("transform", "translate(" + to.translate + ")");
+                                a = this.getBoundingClientRect();
+                            }
+                        }
+                    });
+            });
+    }
+}
+function arrangeLabelsB(selection, label_class) {
+    var move = 1;
+    while (move > 0) {
+        move = 0;
+        selection.selectAll(label_class)
+            .each(function() {
+                var that = this;
+                var a = this.getBoundingClientRect();
+                selection.selectAll(label_class)
+                    .each(function() {
+                        if (this != that) {
+                            var b = this.getBoundingClientRect()
+                            console.log(b);
                             if ((Math.abs(a.left - b.left) * 2 < (a.width + b.width)) && (Math.abs(a.top - b.top) * 2 < (a.height + b.height))) {
                                 var dx = (Math.max(0, a.right - b.left) + Math.min(0, a.left - b.right)) * 0.01;
                                 var dy = (Math.max(0, a.bottom - b.top) + Math.min(0, a.top - b.bottom)) * 0.02;
