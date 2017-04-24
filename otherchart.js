@@ -155,7 +155,7 @@ function change(data) {
 		.remove();
 
 		//Calls the arrangeLabels function on all elements of the class label to arrange them
-	
+		arrangeLabels(svg, ".label");
 
 	/* ------- SLICE TO TEXT POLYLINES -------*/
 
