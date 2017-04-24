@@ -91,7 +91,13 @@ function change(data) {
 
 	text.enter()
 		.append("text")
+		.attr('class', 'label')
+		//and give them and id which is l-0, l-1
+		.attr('id', function(d, i) {
+				return 'l-' + i;
+		})
 		.attr("dy", ".35em")
+		.attr("dx", ".35em")
 		.text(function(d) {
 			return d.data.label;
 		})
