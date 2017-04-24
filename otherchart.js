@@ -1,21 +1,7 @@
-d3.csv("CleanedReac.csv", function(error, data) {
-  if (error) throw error;
-   // [{"Hello": "world"}, …]
-  data.forEach(function(d) {
-      d.Reactions = +d.Reactions;
-			d.Comments = +d.Comments;
-			d.Angry = +d.Angry;
-      d.Seats = +d.Seats;
-
-  });
-  console.log(data)
-
-
-var pformat = d3.format('.1%');
-
 var svg = d3.select("body")
 	.append("svg")
 	.append("g")
+
 
 svg.append("g")
 	.attr("class", "slices");
@@ -35,13 +21,28 @@ var margin = {
 		right: 120,
 };
 
+function d3trigger(choice){
+console.log(choice)
+d3.csv(choice+".csv", function(error, data) {
+  if (error) throw error;
+   // [{"Hello": "world"}, …]
+  data.forEach(function(d) {
+      d.Mean = +d.Mean;
+			d.Percentage = +d.Percentage;
+  });
+  console.log(data)
+
+
+console.log("Hey!")
+
+
 var pie = d3.layout.pie()
 	.sort(null)
   .startAngle(0.5 * Math.PI)
   .endAngle(-0.5 * Math.PI)
 	.value(function(d) {
-		return d.Reactions;
-		console.log(d.Reactions)
+		return d.Mean;
+		console.log(d.Mean)
 	});
 
 var arc = d3.svg.arc()
@@ -56,7 +57,7 @@ svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 var key = function(d){ return d.data.Partycode; };
 
-change(data)
+
 
 
 
@@ -72,7 +73,7 @@ d3.select(".randomize")
 
 
 
-function change(data) {
+
 
 	/* ------- PIE SLICES -------*/
 	var slice = svg.select(".slices").selectAll("path.slice")
@@ -160,9 +161,10 @@ function change(data) {
 
 		//Calls the arrangeLabels function on all elements of the class label to arrange them
 		arrangeLabels(svg, ".label");
+		polylinefunction()
 
 	/* ------- SLICE TO TEXT POLYLINES -------*/
-
+function polylinefunction(){
 	var polyline = svg.select(".lines")
 		.selectAll("polyline")
 		.data(pie(data), key);
@@ -190,5 +192,6 @@ function change(data) {
 
 	polyline.exit()
 		.remove();
-};
+}
 });
+};
