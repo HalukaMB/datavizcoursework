@@ -7,7 +7,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 960px;
-  height: 500px;
+  height: 700px;
   position: relative;
 }
 
@@ -31,8 +31,14 @@ polyline{
 <body>
 <button class="randomize">randomize</button>
 <button class="align">align</button>
-<button class="alignB">alignB</button>
+<form action="" id=radiobuttonA>
+  <input type="radio" name="radiochoice" value="Seats" checked="checked"> Seats
+  <input type="radio" name="radiochoice" value="Reactions"> Reactions
+  <input type="radio" name="radiochoice" value="Comments"> Comments
+  <input type="radio" name="radiochoice" value="Angry"> Angry
+</form>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="buttonchoice.js"></script>
 <script src="utils.js"></script>
 <script src="otherchart.js"></script>
 </body>

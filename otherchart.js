@@ -1,3 +1,18 @@
+d3.csv("CleanedReac.csv", function(error, data) {
+  if (error) throw error;
+   // [{"Hello": "world"}, …]
+  data.forEach(function(d) {
+      d.Reactions = +d.Reactions;
+			d.Comments = +d.Comments;
+			d.Angry = +d.Angry;
+      d.Seats = +d.Seats;
+
+  });
+  console.log(data)
+
+
+var pformat = d3.format('.1%');
+
 var svg = d3.select("body")
 	.append("svg")
 	.append("g")
@@ -25,7 +40,8 @@ var pie = d3.layout.pie()
   .startAngle(0.5 * Math.PI)
   .endAngle(-0.5 * Math.PI)
 	.value(function(d) {
-		return d.value;
+		return d.Reactions;
+		console.log(d.Reactions)
 	});
 
 var arc = d3.svg.arc()
@@ -38,20 +54,11 @@ var outerArc = d3.svg.arc()
 
 svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-var key = function(d){ return d.data.label; };
+var key = function(d){ return d.data.Partycode; };
 
-var color = d3.scale.ordinal()
-	.domain(["Lorem ipsum", "dolor sit", "amet", "consectetur", "adipisicing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt"])
-	.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+change(data)
 
-function randomData (){
-	var labels = color.domain();
-	return labels.map(function(label){
-		return { label: label, value: Math.random() }
-	});
-}
 
-change(randomData());
 
 d3.select(".randomize")
 	.on("click", function(){
@@ -63,10 +70,7 @@ d3.select(".randomize")
 			arrangeLabels(svg, ".label");
 		});
 
-		d3.select(".alignB")
-			.on("click", function(){
-				arrangeLabelsB(svg, ".label");
-			});
+
 
 function change(data) {
 
@@ -76,7 +80,7 @@ function change(data) {
 
 	slice.enter()
 		.insert("path")
-		.style("fill", function(d) { return color(d.data.label); })
+		.style("fill", function(d) { return (d.data.Color); })
 		.attr("class", "slice");
 
 	slice
@@ -108,7 +112,7 @@ function change(data) {
 		.attr("dy", ".35em")
 		.attr("dx", ".35em")
 		.text(function(d) {
-			return d.data.label;
+			return d.data.Partycode
 		})
 		//wraps long texts
 		.call(wrap, margin.right - 20)
@@ -187,3 +191,4 @@ function change(data) {
 	polyline.exit()
 		.remove();
 };
+});

@@ -1,4 +1,5 @@
-//defining the entire pieChart
+
+
 function pieChart() {
 
     var width = 400;
@@ -204,7 +205,7 @@ function pieChart() {
         if (!arguments.length) return height;
         height = _;
         return chart;
-    };
+    }
 
     chart.columns = function(_) {
         if (!arguments.length) return columns;
