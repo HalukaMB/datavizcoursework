@@ -16,7 +16,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
 // append the svg object to the body of the page
 // append a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
-var UKbarchart = d3.select("#UKbarchart").append("svg")
+var UKboxplot = d3.select("#UKboxplot").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -28,41 +28,41 @@ var xaxis = d3.axisBottom(xscale);
 
 var yaxis = d3.axisLeft(yscale);
 
-UKbarchart.append('g')
-    .attr('transform', 'translate(0, ' + height + ')')
+UKboxplot.append('g')
+    .attr('transform', 'translate(0, ' + (height) + ')')
     .attr('class', 'x_axis');
 
-UKbarchart.append('g')
+UKboxplot.append('g')
     .attr('class', 'y_axis');
 
-    var answer=document.getElementById("dropdownA");
-    answer.onchange = function(){
-    var choicedropA = answer.options[answer.selectedIndex].value;
-    console.log(choicedropA);
-    d3UKbar(choicedropA)
-}
+
 
 //d3UKbar(choice)
 
 
 // get the data
-function d3UKbar(choice){
-d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
+function d3UKboxplot(choice){
+  console.log(choice)
+d3.csv("UKboxplotDATA/"+choice+".csv", function(error, data) {
   if (error) throw error;
 
   // format the data
   data.forEach(function(d) {
-    d.measure = (+d.measure*100);
+    d.Mean = (+d.Mean);
+    d.Lowb = (+d.Lowb)
+    d.Uppb = (+d.Uppb)
+    d.Interval = (+d.Interval)
   });
+  console.log(data)
 
 
 
   // Scale the range of the data in the domains
-  xscale.domain(data.map(function(d) { return d.label; }));
-  yscale.domain([0, d3.max(data, function(d) { return +d.measure; })]);
+  xscale.domain(data.map(function(d) { return d.Party; }));
+  yscale.domain([d3.min(data, function(d) { return +(d.Lowb); }), d3.max(data, function(d) { return +(d.Uppb); })]);
 
   // append the rectangles for the bar chart
-      var bars = UKbarchart.selectAll(".bar")
+      var bars = UKboxplot.selectAll(".bar")
       .data(data)
 
       bars
@@ -82,18 +82,18 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
       new_bars
           .merge(bars)
           .transition()
-          .attr("height", function(d) { return height - yscale(d.measure); })
-          .attr("y", function(d) { return yscale(d.measure); })
-          .attr("x", function(d) { return xscale(d.label); })
-          .attr("fill", function(d) { return (d.color); })
+          .attr("height", function(d) { return yscale(d.Lowb) - yscale(d.Uppb); })
+          .attr("y", function(d) { return yscale(d.Uppb); })
+          .attr("x", function(d) { return xscale(d.Party); })
+          .attr("fill", function(d) { return (d.Color); })
 
 
-          UKbarchart.select('.x_axis')
+          UKboxplot.select('.x_axis')
               .transition()
               .duration(1000)
               .call(xaxis);
 
-          UKbarchart.select('.y_axis')
+          UKboxplot.select('.y_axis')
               .transition()
               .duration(1000)
               .call(yaxis);
@@ -102,6 +102,3 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
 
 });
 }
-var start= "Conservatives"
-console.log(start)
-d3UKbar(start)

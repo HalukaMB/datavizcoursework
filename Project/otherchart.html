@@ -3,69 +3,82 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        width: 960px;
+        height: 700px;
+        position: relative;
+    }
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 700px;
-  position: relative;
-}
+    div.chart {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        width: 960px;
+        height: 700px;
+        position: relative;
+    }
 
-div {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 700px;
-  position: relative;
-}
+    svg {
+        width: 100%;
+        height: 100%;
+    }
 
-svg {
-	width: 100%;
-	height: 100%;
-}
+    path.slice {
+        stroke-width: 2px;
+    }
 
-path.slice{
-	stroke-width:2px;
-}
-
-polyline{
-	opacity: .3;
-	stroke: black;
-	stroke-width: 2px;
-	fill: none;
-}
-
+    polyline {
+        opacity: .3;
+        stroke: black;
+        stroke-width: 2px;
+        fill: none;
+    }
 </style>
 
 <body>
-<button class="randomize">randomize</button>
-<button class="align">align</button>
-<form action="" id=radiobuttonA>
-  <input type="radio" name="radiochoice" value="Seats" checked="checked"> Seats
-  <input type="radio" name="radiochoice" value="Reactions"> Reactions
-  <input type="radio" name="radiochoice" value="Comments"> Comments
-  <input type="radio" name="radiochoice" value="Angry"> Angry
-</form>
+    <button class="randomize">randomize</button>
+    <button class="align">align</button>
+    <form action="" id=radiobuttonA>
+        <input type="radio" name="radiochoice" value="Seats" checked="checked"> Seats
+        <input type="radio" name="radiochoice" value="Reactions"> Reactions
+        <input type="radio" name="radiochoice" value="Comments"> Comments
+        <input type="radio" name="radiochoice" value="Angry"> Angry
+    </form>
+    <div id="UKhalfcircle"></div>
 
-<div id="UKhalfcircle"></div>
-<div id=UKbarsContainer>
-  <select id=dropdownA>
-  <option value="Conservatives">Conservatives</option>
-  <option value="Labour">Labour</option>
-  <option value="SNP">SNP</option>
-  <option value="LibDem">LibDem</option>
-  <option value="UKIP">UKIP</option>
-  <option value="Sinnfein">Sinn Fein</option>
-  <option value="SDLP">SDLP</option>
-  <option value="DUP">DUP</option>
-  <option value="Green">Green</option>
-  <option value="PlaidCymru">Plaid Cymru</option>
-  <option value="UUP">UUP</option>
-</select>
-<div id="UKbarchart"></div>
-</div>
-<script src="http://d3js.org/d3.v4.min.js"></script>
-<script src="buttonchoice.js"></script>
-<script src="utils.js"></script>
-<script src="UKhalfcircle.js"></script>
-<script src="UKbarchart.js"></script>
+    <div id=UKbarsContainer>
+        <div class="barselement">
+            <select id=dropdownA>
+            <option value="Conservatives">Conservatives</option>
+            <option value="Labour">Labour</option>
+            <option value="SNP">SNP</option>
+            <option value="LibDem">LibDem</option>
+            <option value="UKIP">UKIP</option>
+            <option value="Sinnfein">Sinn Fein</option>
+            <option value="SDLP">SDLP</option>
+            <option value="DUP">DUP</option>
+            <option value="Green">Green</option>
+            <option value="PlaidCymru">Plaid Cymru</option>
+            <option value="UUP">UUP</option>
+        </select>
+        </div>
+    </div>
+    <div id="UKbarchart" class="chart"></div>
+
+    <div id=UKboxplotContainer>
+        <div class="boxplotelement">
+            <form action="" id=radiobuttonB>
+                <input type="radio" name="radiochoiceB" value="Mistake" checked="checked"> Spelling Errors
+                <input type="radio" name="radiochoiceB" value="Excl"> Exclamation marks
+            </form>
+        </div>
+    </div>
+    <div id="UKboxplot" class="chart"></div>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="buttonchoice.js"></script>
+    <script src="utils.js"></script>
+    <script src="UKhalfcircle.js"></script>
+    <script src="UKbarchart.js"></script>
+    <script src="UKboxplot.js"></script>
+
 </body>
