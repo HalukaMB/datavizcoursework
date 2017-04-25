@@ -10,18 +10,28 @@ var margin = {
 var width = 800 - margin.right - margin.left;
 var height = 400 - margin.top - margin.bottom;
 var radius = 300;
-var svg = d3.select('#UKhalfcircle')
+var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
     .attr('transform', 'translate(' + width / 2 + ',' + height + ')');
-svg.append('g')
+UKhalfcircle.append('g')
     .attr('class', 'slices');
-svg.append('g')
+UKhalfcircle.append('g')
     .attr('class', 'labels');
-svg.append('g')
+UKhalfcircle.append('g')
     .attr('class', 'lines');
+
+    var arc = d3.arc()
+        .innerRadius(radius - 100)
+        .outerRadius(radius - 50);
+
+
+    // label arc
+    var labelArc = d3.arc()
+        .innerRadius(radius * 0.9)
+        .outerRadius(radius * 0.9);
 
 function d3trigger(choice) {
     console.log(choice)
@@ -45,13 +55,17 @@ function d3trigger(choice) {
             .startAngle(-90 * (Math.PI / 180))
             .endAngle(90 * (Math.PI / 180));
         // donut chart arc
-        var arc = d3.arc()
-            .innerRadius(radius - 100)
-            .outerRadius(radius - 50);
-        var slice = svg.select('.slices')
-            .selectAll('path.slice')
-            .data(pie(data));
-        slice.enter()
+
+      var slice = UKhalfcircle.selectAll('.slice')
+                .data(pie(data));
+
+        slice
+              .exit()
+              .transition(4000)
+              .remove()
+
+        var new_slice=slice
+            .enter()
             .append('path')
             .attr('d', arc)
             .attr('fill', function(d) {
@@ -59,12 +73,34 @@ function d3trigger(choice) {
                 return (d.data.Color);
             })
             .attr('class', 'slice');
-        var sliceDots = svg.select('.slices')
-            .selectAll('circle')
+
+        new_slice
+            .merge(slice)
+            .transition(4000)
+            .attr('d', arc)
+            .attr('fill', function(d) {
+                console.log(d.data.Color)
+                return (d.data.Color);
+            })
+
+
+
+        var sliceDots = UKhalfcircle.selectAll('.dot')
             .data(pie(data));
-        sliceDots.enter()
+
+        sliceDots
+            .exit()
+            .transition(4000)
+            .remove()
+
+        new_sliceDots=sliceDots
+            .enter()
             .append('circle')
             .attr('class', 'dot')
+
+        new_sliceDots
+            .merge(sliceDots)
+            .transition(4000)
             .attr('cx', function(d) {
                 return arc.centroid(d)[0];
             })
@@ -73,30 +109,50 @@ function d3trigger(choice) {
             })
             .attr('r', 2)
             .attr('fill', 'black');
-        // label arc
-        var labelArc = d3.arc()
-            .innerRadius(radius * 0.9)
-            .outerRadius(radius * 0.9);
-        var labels = svg.select('.labels')
-            .selectAll('text')
+
+
+        var labels = UKhalfcircle.selectAll('.label')
             .data(pie(data));
-        labels.enter()
+
+        labels
+              .exit()
+              .transition(4000)
+              .remove()
+
+        new_labels= labels
+            .enter()
             .append('text')
             .attr('dy', '.35em')
+            .attr('class', 'label')
+
+        new_labels
+            .merge(labels)
+            .transition(4000)
             .attr('text-anchor', 'middle')
-            .attr('class', 'labels')
             .text(function(d) {
                 return d.data.Partycode;
             })
             .attr('transform', function(d) {
                 return 'translate(' + labelArc.centroid(d)[0] + ',' + labelArc.centroid(d)[1] + ')';
             });
+
         // lines
-        var polyline = svg.select('.lines')
-            .selectAll('polyline')
+        var polyline = UKhalfcircle.selectAll('.polyline')
             .data(pie(data));
-        polyline.enter()
+
+        polyline.exit()
+                .transition(4000)
+                .remove()
+
+        var new_polyline=polyline
+            .enter()
             .append('polyline')
+            .attr("class","polyline")
+
+
+        new_polyline
+            .merge(polyline)
+            .transition(4000)
             .attr('stroke-width', '2px')
             .attr('stroke', 'black')
             .attr('opacity', '0.4')
@@ -105,3 +161,5 @@ function d3trigger(choice) {
             });
     });
   }
+  var start = "Seats"
+  d3trigger(start)

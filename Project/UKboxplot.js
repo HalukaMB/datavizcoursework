@@ -87,6 +87,31 @@ d3.csv("UKboxplotDATA/"+choice+".csv", function(error, data) {
           .attr("x", function(d) { return xscale(d.Party); })
           .attr("fill", function(d) { return (d.Color); })
 
+          var sliceDots = UKboxplot.selectAll('.dot')
+              .data((data));
+
+          sliceDots
+              .exit()
+              .transition()
+              .attr('cx', function(d) { return  xscale(d.Party)+(xscale.bandwidth())*0.5; })
+              .attr('cy', height)
+              .remove();
+
+          var new_sliceDots = sliceDots
+              .enter()
+              .append('circle')
+              .attr('class', 'dot')
+              .attr('cy', height)
+
+            new_sliceDots
+              .merge(sliceDots)
+              .transition()
+              .attr('cx', function(d) { return xscale(d.Party)+(xscale.bandwidth())*0.5 ;})
+              .attr('cy', function(d) { return yscale(d.Mean);
+              })
+              .attr('r', 3)
+              .attr('fill', 'black');
+
 
           UKboxplot.select('.x_axis')
               .transition()
@@ -102,3 +127,5 @@ d3.csv("UKboxplotDATA/"+choice+".csv", function(error, data) {
 
 });
 }
+var choice = "Mistake"
+d3UKboxplot(choice)
