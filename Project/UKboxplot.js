@@ -4,7 +4,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-  var pformat = d3.format('.1%');
+  var pformat = d3.format('.2');
 
   // set the ranges
   var xscale = d3.scaleBand()
@@ -111,6 +111,34 @@ d3.csv("UKboxplotDATA/"+choice+".csv", function(error, data) {
               })
               .attr('r', 3)
               .attr('fill', 'black');
+
+              var text = UKboxplot.selectAll('.text')
+                  .data((data));
+
+              text
+                  .exit()
+                  .transition()
+                  .attr('x', function(d) { return  xscale(d.Party)+(xscale.bandwidth())*0.5; })
+                  .attr('y', height)
+                  .remove();
+
+              var new_text = text
+                  .enter()
+                  .append('text')
+                  .attr('class', 'text')
+                  .attr('cy', height)
+
+                new_text
+                  .merge(text)
+                  .transition()
+                  .attr('x', function(d) { return xscale(d.Party)+(xscale.bandwidth())*0.5 ;})
+                  .attr('dx', '.35em')
+                  .attr('y', function(d) { return yscale(d.Mean);})
+                  .text(function(d) {
+                      return pformat(d.Mean);
+                  })
+                  .attr('fill', 'black');
+
 
 
           UKboxplot.select('.x_axis')

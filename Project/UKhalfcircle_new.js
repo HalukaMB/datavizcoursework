@@ -8,8 +8,8 @@ var margin = {
     left: 40
 };
 var width = 800 - margin.right - margin.left;
-var height = 400 - margin.top - margin.bottom;
-var radius = 300;
+var height = 500 - margin.top - margin.bottom;
+var radius = 250;
 var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
@@ -30,8 +30,13 @@ UKhalfcircle.append('g')
 
     // label arc
     var labelArc = d3.arc()
-        .innerRadius(radius * 0.9)
+        .innerRadius(radius * 0.8)
         .outerRadius(radius * 0.9);
+
+        function midAngle(d) {
+            return d.startAngle + (d.endAngle - d.startAngle) / 2;
+        }
+
 
 function d3trigger(choice) {
     console.log(choice)
@@ -125,16 +130,30 @@ function d3trigger(choice) {
             .attr('dy', '.35em')
             .attr('class', 'label')
 
+
         new_labels
             .merge(labels)
-            .transition(4000)
-            .attr('text-anchor', 'middle')
+            .attr('id', function(d, i) {
+                return 'l-' + i;
+            })
+
+            .style("text-anchor", function(d) {
+                return midAngle(d) < -0.13 ? "end" : "start";
+            })
             .text(function(d) {
                 return d.data.Partycode;
             })
-            .attr('transform', function(d) {
-                return 'translate(' + labelArc.centroid(d)[0] + ',' + labelArc.centroid(d)[1] + ')';
-            });
+
+            .attr("dy", ".35em")
+            .attr("dx", ".35em")
+            .attr("fill", "#111")
+            .attr("transform", function(d) {
+                var pos = labelArc.centroid(d);
+                //If midAngle is smaller than Math.Pi the pos[0] is radius*1, otherwise it is radius*-1
+                pos[0] = radius * (midAngle(d) < -0.13 ? -1 : 1);
+                return "translate(" + pos + ")";
+            })
+            arrangeLabels(UKhalfcircle, ".label");
 
         // lines
         var polyline = UKhalfcircle.selectAll('.polyline')
@@ -161,5 +180,5 @@ function d3trigger(choice) {
             });
     });
   }
-  var start = "Seats"
+  var start = "Seat"
   d3trigger(start)
