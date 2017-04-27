@@ -2,20 +2,21 @@
 //http://stackoverflow.com/questions/42937527/d3-placing-labels-and-lines-on-a-half-pie-half-donut-chart
 
 var margin = {
-    top: 40,
+    top: 10,
     right: 40,
-    bottom: 40,
+    bottom: 10,
     left: 40
 };
 var width = 800 - margin.right - margin.left;
-var height = 500 - margin.top - margin.bottom;
+var height = 300 - margin.top - margin.bottom;
 var radius = 250;
 var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + width / 2 + ',' + height + ')');
+    .attr('transform', 'translate(' + width / 2 + ',' + height*1.1 + ')');
+
 UKhalfcircle.append('g')
     .attr('class', 'slices');
 UKhalfcircle.append('g')
@@ -127,7 +128,6 @@ function d3trigger(choice) {
         new_labels= labels
             .enter()
             .append('text')
-            .attr('dy', '.35em')
             .attr('class', 'label')
 
 
@@ -144,8 +144,9 @@ function d3trigger(choice) {
                 return d.data.Partycode;
             })
 
-            .attr("dy", ".35em")
-            .attr("dx", ".35em")
+
+            .attr("dy", ".75em")
+            .attr("dx", ".75em")
             .attr("fill", "#111")
             .attr("transform", function(d) {
                 var pos = labelArc.centroid(d);
@@ -153,6 +154,8 @@ function d3trigger(choice) {
                 pos[0] = radius * (midAngle(d) < -0.13 ? -1 : 1);
                 return "translate(" + pos + ")";
             })
+            .call(wrap, 70)
+
             arrangeLabels(UKhalfcircle, ".label");
 
         // lines
@@ -172,12 +175,27 @@ function d3trigger(choice) {
         new_polyline
             .merge(polyline)
             .transition(4000)
+            .attr("dy", ".75em")
+            .attr("dx", ".75em")
             .attr('stroke-width', '2px')
             .attr('stroke', 'black')
             .attr('opacity', '0.4')
-            .attr('points', function(d) {
-                return [arc.centroid(d), labelArc.centroid(d)];
-            });
+            .attr("points", function(d, j) {
+              //if midAngle bigger as Pi Offset is set to 10
+                var offset = midAngle(d) < -0.13 ? 10 : 15;
+                //picks up the indexed text from earlier
+                var label = d3.select('#l-' + j);
+                //Complicated function from the other script that should help to order the text
+                var transform = getTransformation(label.attr("transform"));
+                //Position of the polyline should be the centroid
+                var pos = labelArc.centroid(d);
+                //This is also from the other function
+                pos[0] = transform.translateX + offset;
+                pos[1] = transform.translateY;
+                var mid = labelArc.centroid(d);
+                mid[1] = transform.translateY;
+                return [arc.centroid(d), mid, pos];
+              });
     });
   }
   var start = "Seat"

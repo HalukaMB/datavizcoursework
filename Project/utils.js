@@ -47,8 +47,9 @@ function arrangeLabels(selection, label_class) {
                         if (this != that) {
                             var b = this.getBoundingClientRect()
                             if ((Math.abs(a.left - b.left) * 2 < (a.width + b.width)) && (Math.abs(a.top - b.top) * 2 < (a.height + b.height))) {
-                                var dx = (Math.max(0, a.right - b.left) + Math.min(0, a.left - b.right)) * 0.01;
-                                var dy = (Math.max(0, a.bottom - b.top) + Math.min(0, a.top - b.bottom)) * 0.02;
+                                //changed to have more space between labels
+                                var dx = (Math.max(0, a.right - b.left) + Math.min(0, a.left - b.right)) * 0.15;
+                                var dy = (Math.max(0, a.bottom - b.top) + Math.min(0, a.top - b.bottom)) * 0.30;
                                 var tt = getTransformation(d3.select(this)
                                     .attr("transform"));
                                 var to = getTransformation(d3.select(that)

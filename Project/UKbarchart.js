@@ -1,7 +1,7 @@
 //https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
   var pformat = d3.format('.2%');
@@ -33,7 +33,8 @@ UKbarchart.append('g')
     .attr('class', 'x_axis');
 
 UKbarchart.append('g')
-    .attr('class', 'y_axis');
+    .attr('class', 'y_axis')
+    ;
 
     var answer=document.getElementById("dropdownA");
     answer.onchange = function(){
