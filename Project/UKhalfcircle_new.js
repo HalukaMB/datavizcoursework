@@ -7,15 +7,18 @@ var margin = {
     bottom: 10,
     left: 40
 };
-var width = 800 - margin.right - margin.left;
-var height = 300 - margin.top - margin.bottom;
+
+var width = document.getElementById('UKhalfcircle').clientWidth
+var height = document.getElementById('UKhalfcircle').clientHeight
+
+
 var radius = 250;
 var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + width / 2 + ',' + height*1.1 + ')');
+    .attr('transform', 'translate(' + width / 2 + ',' + height*0.8 + ')');
 
 UKhalfcircle.append('g')
     .attr('class', 'slices');

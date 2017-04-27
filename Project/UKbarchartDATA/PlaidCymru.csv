@@ -1,5 +1,1 @@
-label,measure,color
-Seats,0.00466,#008142
-Comments,0.00770,#008142
-Reactions,0.00944,#008142
-Angry Reactions,0.01582,#008142
+label,measure,number,ratio,colorSeats,0.00466,3,0,#008142Comments,0.0077,0,9.59,#008142Reactions,0.00944,0,78.19,#008142Angry Reactions,0.01582,0,5.56,#008142

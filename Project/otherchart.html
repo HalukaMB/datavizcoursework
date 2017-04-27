@@ -8,7 +8,8 @@
         width: 960px;
         height: 700px;
         position: absolute;
-        left: 5%;
+
+
     }
     header {
         align-content: center;
@@ -17,14 +18,20 @@
         justify-content: space-around;
     }
 
+    div.chartcircle {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        width: 80vw;
+        height: 60vh;
+
+        position: relative;
+    }
+
     div.chart {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         padding-top: 20px;
         margin-top: 20px;
         padding-left: 20px;
-
-
-        position: relative;
     }
     img{
       width: 15%;
@@ -52,8 +59,17 @@
         padding:2px;
         margin:2px;
     }
-    .textbox {
-        padding-bottom: 20px;
+
+    .tooltip {
+        position: absolute;
+    }
+
+    .tooltip p {
+        background-color: white;
+        border: #eee 1px solid;
+        padding: 2px;
+        font-family: sans-serif;
+        font-size: 11px;
     }
 </style>
 
@@ -77,7 +93,7 @@
         <input type="radio" name="radiochoice" value="Reaction"> Reaction
         <input type="radio" name="radiochoice" value="AngryReac"> Angry
     </form>
-    <div id="UKhalfcircle" class="chart"></div>
+    <div id="UKhalfcircle" class="chartcircle"></div>
     <div class="textbox">If the "Facebook parliament" would be based on the number of comments, the Conservatives would probably still be in power - but likely in a coalition
     together with UKIP. The heavy Leave-campaigning party gets almost 21 percent of all comments of UK parties represented in the parliament. If you look at reactions in general, the race is much tighter with
     all parties getting roughly the same amount of likes or other reactions per post. However, reactions can be very different. In fact, if you look at who gets the most angry reactions per post, the picture changes.

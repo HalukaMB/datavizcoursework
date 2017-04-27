@@ -13,6 +13,9 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
   var yscale = d3.scaleLinear()
             .range([height, 0]);
 
+
+
+
 // append the svg object to the body of the page
 // append a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
@@ -23,6 +26,9 @@ var UKbarchart = d3.select("#UKbarchart").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+          var tooltip = d3.select("#UKbarchart")
+              .append('div')
+              .attr('class', 'tooltip');
 //https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript/11086014
 var xaxis = d3.axisBottom(xscale);
 
@@ -54,9 +60,40 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
   // format the data
   data.forEach(function(d) {
     d.measure = (+d.measure*100);
+    d.number = +d.number;
+    d.ratio = +d.ratio;
   });
 
+  function mouseOver(d) {
+      console.log(Math.abs(d.value) + "%");
+      var displayperc = tooltipFormat(Math.abs(d.value) + "%");
 
+      d3.select(this)
+          .transition()
+          .style('opacity', 1)
+
+          var displayval = Math.abs(d.value)
+          console.log(displayval)
+
+      tooltip
+          .style('display', null)
+
+          .html('<p>'+displayval+' percent more </p>');
+  };
+
+  function mouseMove(d) {
+      tooltip
+          .style('top', (d3.event.pageY - 20) + "px")
+          .style('left', (d3.event.pageX + 20) + "px");
+  };
+
+  function mouseOut(d) {
+      d3.select(this)
+          .transition()
+
+      tooltip
+          .style('display', 'none');
+  };
 
   // Scale the range of the data in the domains
   xscale.domain(data.map(function(d) { return d.label; }));
@@ -78,7 +115,10 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
           .append("rect")
           .attr("class", "bar")
           .attr("width", xscale.bandwidth())
-          .attr('y', height);
+          .attr('y', height)
+          .on('mouseover', mouseOver)
+          .on('mousemove', mouseMove)
+          .on('mouseout', mouseOut);
 
       new_bars
           .merge(bars)
@@ -87,6 +127,7 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
           .attr("y", function(d) { return yscale(d.measure); })
           .attr("x", function(d) { return xscale(d.label); })
           .attr("fill", function(d) { return (d.color); })
+
 
           var text = UKbarchart.selectAll('.text')
               .data((data));
@@ -126,6 +167,37 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
               .transition()
               .duration(1000)
               .call(yaxis);
+
+              function mouseOver(d) {
+                  console.log(d);
+                  if (d.number!=0){
+                    console.log("number")
+                  }
+                  else{
+                    console.log("ratio")
+                  }
+                  d3.select(this)
+                      .transition()
+                      .style('opacity', 1)
+
+                  tooltip
+                      .style('display', null)
+                      .html('<p>' + d.ratio + ' per post </p>');
+              };
+
+              function mouseMove(d) {
+                  tooltip
+                      .style('top', (d3.event.pageY - 20) + "px")
+                      .style('left', (d3.event.pageX + 20) + "px");
+              };
+
+              function mouseOut(d) {
+                  d3.select(this)
+                      .transition()
+
+                  tooltip
+                      .style('display', 'none');
+              };
 
 
 
