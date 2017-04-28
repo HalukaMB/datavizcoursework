@@ -3,19 +3,21 @@
 
 var margin = {
     top: 10,
-    right: 40,
+    right: 10,
     bottom: 10,
-    left: 40
-};
-var width = 800 - margin.right - margin.left;
-var height = 300 - margin.top - margin.bottom;
-var radius = 250;
+    left: 10  };
+
+
+
+var width = document.getElementById('UKhalfcircle').clientWidth - margin.left - margin.right;
+var height = document.getElementById('UKhalfcircle').clientHeight - margin.top - margin.bottom;
+var radius = (Math.min(width,height)/2);
 var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + width / 2 + ',' + height*1.1 + ')');
+    .attr('transform', 'translate(' + (width /2.5) + ',' + (height/1.2) + ')');
 
 UKhalfcircle.append('g')
     .attr('class', 'slices');
@@ -34,8 +36,8 @@ UKhalfcircle.append('g')
         .text("House of Commons or \"Facebook Parliament\"?");
 
     var arc = d3.arc()
-        .innerRadius(radius - 100)
-        .outerRadius(radius - 50);
+        .innerRadius(radius*0.45)
+        .outerRadius(radius*0.8);
 
 
     // label arc
@@ -188,6 +190,7 @@ function d3trigger(choice) {
             .attr("dx", ".75em")
             .attr('stroke-width', '2px')
             .attr('stroke', 'black')
+            .attr('fill', "none")
             .attr('opacity', '0.4')
             .attr("points", function(d, j) {
               //if midAngle bigger as Pi Offset is set to 10

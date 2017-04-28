@@ -2,85 +2,11 @@
 
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
-    body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        width: 960px;
-        height: 700px;
-        position: absolute;
-
-
-    }
-    header {
-        align-content: center;
-        align-items: center;
-        display: flex;
-        justify-content: space-around;
-    }
-    .textbox{
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-    }
-    div.chartcircle {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding-top: 20vh;
-
-        position: relative;
-    }
-
-    div.chart {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding-top: 20px;
-        margin-top: 20px;
-        padding-left: 20px;
-    }
-    img{
-      width: 15%;
-      height: 15%;
-    }
-
-    svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    path.slice {
-        stroke-width: 2px;
-    }
-
-    polyline {
-        opacity: .3;
-        stroke: black;
-        stroke-width: 2px;
-        fill: none;
-    }
-    .label {
-        font-size: 15px;
-        fill:black;
-        padding:2px;
-        margin:2px;
-    }
-
-    .tooltip {
-        position: absolute;
-    }
-
-    .tooltip p {
-        background-color: white;
-        border: #eee 1px solid;
-        padding: 2px;
-        font-family: sans-serif;
-        font-size: 11px;
-    }
-
-</style>
-
+<link rel="stylesheet" href="stylewebsite.css">
 <body>
   <header>
       <img class="logo" src="assets/Angry.png">
-      <h1>Rant or like a party</h1>
+      <h1>Rant a party</h1>
       <img class="logo" src="assets/Like.png">
   </header>
   <h2>How users interact with facebook pages of political parties</h2>
@@ -105,10 +31,9 @@
     <div class="textbox">If the "Facebook parliament" would be based on the number of comments, the Conservatives would probably still be in power - but likely in a coalition
     together with UKIP. The heavy Leave-campaigning party gets almost 21 percent of all comments of UK parties represented in the parliament. If you look at reactions in general, the race is much tighter with
     all parties getting roughly the same amount of likes or other reactions per post. However, reactions can be very different. In fact, if you look at who gets the most angry reactions per post, the picture changes.
-    The conservatives of Theresa May do not ignite a lot of rage. But Labour, Greens and UKIP do, with especially the latter two exceeding by far their actual importance in parliament.  </div>
-    <div class="textbox">To see in detail how each of the parties performed, navigate through the graphics below. </div>
+    The conservatives of Theresa May do not ignite a lot of rage. But Labour, Greens and UKIP do, with especially the latter two exceeding by far their actual importance in parliament.
     <div id=UKbarsContainer>
-        <div class="barselement">
+        <div id="barselement">
             <select id=dropdownA>
             <option value="Conservatives">Conservatives</option>
             <option value="labourf">Labour</option>
@@ -128,7 +53,7 @@
     <div class="textbox">Facebook reactions as a measure for rants could be problematic. For one, a lot of people are still using them sparsely.
       Even in the case of the three parties that caused the most angry reactions on Facebook, the angry reaction only makes up about a tenth of all the reactions or even less.
       (Green party: 11%, Labour: 9%, UKIP: 5%) Also there is the chance that people rather express their anger by commenting.
-      Hence, I did an analysis of the comments on parties' Facebook pages and analysed for 5,000 comments the ratio of spelling mistakes and exclamation marks per words. Furthermore,
+      <br><br>Hence, I did an analysis of the comments on parties' Facebook pages and analysed for 5,000 comments the ratio of spelling mistakes and exclamation marks per words. Furthermore,
       I looked at how these ratios correlate with the position of a party in the political spectrum, so whether its members see their party rather on the left or the right.
       To have a somewhat reliable measure for that, I used <a href="http://blogs.lse.ac.uk/politicsandpolicy/ideology-is-in-the-eye-of-the-beholder/"> study from the London School of Economics</a> that asked party member of Greens, Labour, SNP, Lib Dem, UKIP, and Conservative for their
       opinion and where they would see their party.
@@ -145,13 +70,34 @@
     </div>
     <div id="UKboxplot" class="chart"></div>
 
-    <script src="http://d3js.org/d3.v4.min.js"></script>
-    <script src="buttonchoice.js"></script>
-    <script src="utils.js"></script>
-    <script src="UKhalfcircle_new.js"></script>
-    <script src="UKbarchart.js"></script>
-    <script src="UKboxplot.js"></script>
+
     <div class="textbox">All in all, it can be said that there is a clear difference in the way how users comment and react on the Facebook posts of parties.
       In the case of spelling mistakes, it can even be concluded that there is a tendency that commentators on left/liberal parties' pages make less mistakes than on parties that are more on the right.
       However, it has to be noted that these results do not allow to draw any conclusions on whether voters of these parties tend to be more angry, more outraged or simply worse in terms of spelling words.
+
+      <script src="http://d3js.org/d3.v4.min.js"></script>
+      <script src="buttonchoice.js"></script>
+      <script src="utils.js"></script>
+      <script src="UKhalfcircle_new.js"></script>
+      <script src="UKbarchart.js"></script>
+      <script src="UKboxplot.js"></script>
+      <script>
+    //  window.onload = function() {
+      //     drawhalfcircle();
+        //   drawboxplot();
+          // drawbarchart();
+      // };
+
+      // window.onresize = function() {
+        //   console.log('Window Resize');
+          // document.getElementById("UKhalfcircle").innerHTML = "";
+          // document.getElementById("UKbarchart").innerHTML = "";
+
+          // document.getElementById("UKboxplot").innerHTML = "";
+
+          // drawhalfcircle();
+        //   drawboxplot();
+        //   drawbarchart();
+      //};
+</script>
 </body>
