@@ -1,6 +1,6 @@
 //https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
+var margin = {top: 50, right: 20, bottom: 30, left: 40},
     width = 800 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -35,12 +35,31 @@ var xaxis = d3.axisBottom(xscale);
 var yaxis = d3.axisLeft(yscale);
 
 UKbarchart.append('g')
-    .attr('transform', 'translate(0, ' + height + ')')
+    .attr('transform', 'translate(0, ' + (height+margin.top-70) + ')')
     .attr('class', 'x_axis');
 
 UKbarchart.append('g')
-    .attr('class', 'y_axis')
-    ;
+    .attr('class', 'y_axis');
+
+
+    UKbarchart.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left + 10)
+        .attr("x", 0 - (height / 2))
+        .attr("stroke", "black")
+        .attr("fill", "black")
+        .attr("font-size", "0.8em")
+        .style("text-anchor", "middle")
+        .text("Share of Seats / Comments / Reactions in %");
+
+        UKbarchart.append("text")
+            .attr("class", "x label")
+            .attr("stroke", "black")
+            .attr("fill", "black")
+            .attr("text-anchor", "middle")
+            .attr("x", width / 2)
+            .attr("y", -30)
+            .text("Difference between influence in parliament and on Facebook");
 
     var answer=document.getElementById("dropdownA");
     answer.onchange = function(){
@@ -172,17 +191,24 @@ d3.csv("UKbarchartDATA/"+choice+".csv", function(error, data) {
                   console.log(d);
                   if (d.number!=0){
                     console.log("number")
+                    d3.select(this)
+                        .transition()
+                        .style('opacity', 1)
+
+                    tooltip
+                        .style('display', null)
+                        .html('<p>' + d.number + ' Seats in the parliament</p>');
                   }
                   else{
                     console.log("ratio")
-                  }
+
                   d3.select(this)
                       .transition()
                       .style('opacity', 1)
 
                   tooltip
                       .style('display', null)
-                      .html('<p>' + d.ratio + ' per post </p>');
+                      .html('<p>' + d.ratio +" "+ d.label + ' per post </p>');}
               };
 
               function mouseMove(d) {

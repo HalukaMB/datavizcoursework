@@ -1,8 +1,10 @@
 //https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
+var margin = {top: 50, right: 20, bottom: 50, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
+
+
 
   var pformat = d3.format('.2');
 
@@ -34,6 +36,36 @@ UKboxplot.append('g')
 
 UKboxplot.append('g')
     .attr('class', 'y_axis');
+
+    UKboxplot.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "middle")
+        .attr("x", (width / 2)*0.95)
+        .attr("y", height+35)
+        .attr("stroke", "black")
+        .attr("fill", "black")
+        .attr("font-size", "0.8em")
+        .text("Parties");
+
+
+    UKboxplot.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left + 10)
+        .attr("x", 0 - (height / 2))
+        .attr("stroke", "black")
+        .attr("fill", "black")
+        .attr("font-size", "0.8em")
+        .style("text-anchor", "middle")
+        .text("Number of spelling mistakes/exclamation marks per word");
+
+    UKboxplot.append("text")
+        .attr("class", "x label")
+        .attr("stroke", "black")
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height - height - 30)
+        .text("Spelling mistakes and spelling errors in comments");
 
 
 

@@ -7,18 +7,15 @@ var margin = {
     bottom: 10,
     left: 40
 };
-
-var width = document.getElementById('UKhalfcircle').clientWidth
-var height = document.getElementById('UKhalfcircle').clientHeight
-
-
+var width = 800 - margin.right - margin.left;
+var height = 300 - margin.top - margin.bottom;
 var radius = 250;
 var UKhalfcircle = d3.select('#UKhalfcircle')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + width / 2 + ',' + height*0.8 + ')');
+    .attr('transform', 'translate(' + width / 2 + ',' + height*1.1 + ')');
 
 UKhalfcircle.append('g')
     .attr('class', 'slices');
@@ -26,6 +23,15 @@ UKhalfcircle.append('g')
     .attr('class', 'labels');
 UKhalfcircle.append('g')
     .attr('class', 'lines');
+
+    UKhalfcircle.append("text")
+        .attr("class", "top")
+        .attr("stroke", "black")
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .attr("x", width /12)
+        .attr("y", - height)
+        .text("House of Commons or \"Facebook Parliament\"?");
 
     var arc = d3.arc()
         .innerRadius(radius - 100)

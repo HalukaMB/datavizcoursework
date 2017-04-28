@@ -17,12 +17,15 @@
         display: flex;
         justify-content: space-around;
     }
-
+    .textbox{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
     div.chartcircle {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-        width: 80vw;
-        height: 60vh;
+        padding-top: 20vh;
 
         position: relative;
     }
@@ -71,6 +74,7 @@
         font-family: sans-serif;
         font-size: 11px;
     }
+
 </style>
 
 <body>
@@ -84,9 +88,13 @@
     Posting something badly phrased can cause a shitstorm, create a digital outrage and have analogue implications as far as <a href="http://www.independent.co.uk/news/world/europe/sweden-politician-roland-pettersson-kalmar-anyone-shoot-donald-trump-us-president-facebook-social-a7543796.html">stepping down as a MP.</a>
     But platforms can also give a party completly new possibilities to campaign and stay in touch with voters.
    In this article I want to look at how parties in the UK differ in terms of what kind of reactions they cause on Facebook.
-  </div>
-  <div class="textbox">What would happen, if we did not give parties seats based on the constituencies they win but based on the number of comments
-    they receive per post. Or the number of reactions such as likes, sad, happy, angry and love emojis? Well, the House of Commons would be a pretty different parliament. </div>
+  <br>
+  <br>
+  What would happen, if we did not give parties seats based on the constituencies they win but based on the number of comments
+  they receive per post. Or the number of reactions such as likes, sad, happy, angry and love emojis? Well, the House of Commons would be a pretty different parliament.
+  At least for the seven parties that either use Facebook effectively or the ones that have a lot of seats as of now.
+  For smaller parties like Liberal Democrat, Democratic Unionist Party, Plaid Cymru, Social Democratic and Labour Party and the Ulster Unionist Party the shift would be marginal.
+  This is why they are summed under "Others".</div>
     <form action="" id=radiobuttonA>
         <input type="radio" name="radiochoice" value="Seat" checked="checked"> Seat
         <input type="radio" name="radiochoice" value="Comment"> Comment
@@ -103,7 +111,7 @@
         <div class="barselement">
             <select id=dropdownA>
             <option value="Conservatives">Conservatives</option>
-            <option value="Labour">Labour</option>
+            <option value="labourf">Labour</option>
             <option value="SNP">SNP</option>
             <option value="LibDem">LibDem</option>
             <option value="UKIP">UKIP</option>
@@ -112,7 +120,7 @@
             <option value="DUP">DUP</option>
             <option value="Green">Green</option>
             <option value="PlaidCymru">Plaid Cymru</option>
-            <option value="UUP">UUP</option>
+            <option value="UUPf">UUP</option>
         </select>
         </div>
     </div>
@@ -120,11 +128,13 @@
     <div class="textbox">Facebook reactions as a measure for rants could be problematic. For one, a lot of people are still using them sparsely.
       Even in the case of the three parties that caused the most angry reactions on Facebook, the angry reaction only makes up about a tenth of all the reactions or even less.
       (Green party: 11%, Labour: 9%, UKIP: 5%) Also there is the chance that people rather express their anger by commenting.
-      Hence, I did an analysis of the comments on parties' Facebook pages and analyse for 5,000 comments the ratio of spelling mistakes and exclamation marks per words.
-   </div>
-   <div class="textbox">The dot in the middle of the box shows the average ratio, the box around it is the 95% confidence interval.
-     Interestingly enough, statistical analysis shows that each party has significantly less spelling mistakes than the average of the parties on its right of the political spectrum.
-     So commentators on Facebook pages of the right-wing parties tend to make more spelling mistakes which could be a hint for anger. However, this correlation was not present for exclamation marks.</div>
+      Hence, I did an analysis of the comments on parties' Facebook pages and analysed for 5,000 comments the ratio of spelling mistakes and exclamation marks per words. Furthermore,
+      I looked at how these ratios correlate with the position of a party in the political spectrum, so whether its members see their party rather on the left or the right.
+      To have a somewhat reliable measure for that, I used <a href="http://blogs.lse.ac.uk/politicsandpolicy/ideology-is-in-the-eye-of-the-beholder/"> study from the London School of Economics</a> that asked party member of Greens, Labour, SNP, Lib Dem, UKIP, and Conservative for their
+      opinion and where they would see their party.
+    Interestingly enough, after matching my Facebook data with these political positions, statistical analysis shows that each party has significantly less spelling mistakes than the average of the parties on its right of the political spectrum.
+     So commentators on Facebook pages of the right-wing parties tend to make more spelling mistakes which could be a hint for anger. However, this correlation was not present for exclamation marks.
+   I have visualised this relationship in the graph below. The dot in the middle of the box shows the average ratio, the box around it is the 95% confidence interval.
     <div id=UKboxplotContainer>
         <div class="boxplotelement">
             <form action="" id=radiobuttonB>
