@@ -1,10 +1,15 @@
 //https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
 // set the dimensions and margins of the graph
-var margin = {top: 50, right: 20, bottom: 50, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {
+    top: 50,
+    right: 10,
+    bottom: 70,
+    left: 70  };
 
 
+
+var width = document.getElementById('UKboxplot').clientWidth - margin.left - margin.right;
+var height = document.getElementById('UKboxplot').clientHeight - margin.top - margin.bottom;
 
   var pformat = d3.format('.2');
 
@@ -65,7 +70,7 @@ UKboxplot.append('g')
         .attr("text-anchor", "middle")
         .attr("x", width / 2)
         .attr("y", height - height - 30)
-        .text("Spelling mistakes and spelling errors in comments");
+        .text("Spelling mistakes and spelling errors in comments ");
 
 
 
